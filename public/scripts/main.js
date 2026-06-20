@@ -1,3 +1,10 @@
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 1300);
+});
+
 const burger = document.querySelector('.nav-burger');
     const navLinks = document.querySelector('.nav-links');
 

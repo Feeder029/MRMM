@@ -651,6 +651,58 @@ footer p {
     color: var(--muted);
 }
 
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.loader-logo {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.loader-bar-track {
+    width: 120px;
+    height: 1px;
+    background: var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-bar-fill {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: var(--accent);
+    animation: load 1.2s ease forwards;
+}
+
+@keyframes load {
+    to { left: 0; }
+}
+
 @media (max-width: 900px) {
  
     nav {
