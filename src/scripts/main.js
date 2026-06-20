@@ -18,7 +18,7 @@ projectItems.forEach(item => {
             setTimeout(() => {
                 const rect = preview.getBoundingClientRect();
                 window.scrollTo({
-                    top: window.scrollY + rect.top - 250,
+                    top: window.scrollY + rect.top - 235,
                     behavior: "smooth"
                 });
             }, 500);
