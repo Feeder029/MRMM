@@ -6,7 +6,7 @@
     <title>Portfolio — Mark Reven Macaspac </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css?v=1.0.1">
 
 </head>
 <body>
@@ -406,11 +406,19 @@
                     <label class="form-label">Message</label>
                     <textarea class="form-textarea" placeholder="Tell me about your project…"></textarea>
                 </div>
-                <button class="btn-send">Send message</button>
+                <button class="btn-send" onclick="document.getElementById('popup').classList.add('open')">Send message</button>
            </div>
         </div>
+        
     </section>
-
+        <!-- Temporary -->
+        <div class="popup-overlay" id="popup">
+            <div class="popup-card">
+                <img class="loading-gif" src="./img/cat-ouch.gif" alt="Loading..." />
+                <p>Under Construction.</p>
+                <button onclick="document.getElementById('popup').classList.remove('open')">Dismiss</button>
+            </div>
+        </div>
     <footer>
         <p>&copy; 2026 Mark Reven Macaspac</p>
        
