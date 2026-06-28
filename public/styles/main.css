@@ -622,6 +622,11 @@ section {
     color: #333; 
 }
 
+.form-input:invalid.touched,
+.form-textarea:invalid.touched {
+    border-color: #8B4A4A;
+}
+
 .btn-send {
     align-self: flex-start;
     background: var(--accent);
@@ -634,6 +639,88 @@ section {
     padding: 0.9rem 2rem;
     cursor: pointer;
     transition: opacity 0.2s;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-overlay.open { 
+    display: flex; 
+}
+
+.popup-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem 2.25rem;
+  max-width: 360px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.popup-rule {
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  margin-bottom: 0.25rem;
+  transition: background 0.2s;
+}
+
+.popup-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.popup-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.popup-body {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.popup-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.popup-close:hover { 
+    color: var(--text); 
+}
+
+.popup-overlay.error .popup-rule { 
+    background: #8B4A4A; 
+}
+.popup-overlay.error .popup-label { 
+    color: #B87070; 
 }
 
 footer {
@@ -956,7 +1043,7 @@ footer p {
 }
 
 /* Temporary */
-.popup-overlay {
+/* .popup-overlay {
   display: none;
   position: fixed;
   inset: 0;
@@ -1001,4 +1088,5 @@ footer p {
   height: 80px;
   margin: 0 auto 16px;
   display: block;
-}
+} */
+

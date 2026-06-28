@@ -61,3 +61,40 @@ projectItems.forEach(item => {
         }
     });
 });
+
+function sendEmail() {
+    const name    = document.getElementById('nameData');
+    const email   = document.getElementById('emailData');
+    const message = document.getElementById('messageData');
+    const fields  = [name, email, message];
+
+    fields.forEach(el => el.classList.add('touched'));
+
+    const allFilled   = fields.every(el => el.value.trim() !== '');
+    const emailValid  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+
+    if (!allFilled || !emailValid) return;
+
+    const info = {
+        nameData:    name.value,
+        emailData:   email.value,
+        messageData: message.value
+    };
+
+    emailjs.send("service_azi5l3k", "template_w5dzix5", info)
+        .then(() => {
+            fields.forEach(el => {
+                el.value = '';
+                el.classList.remove('touched');
+            });
+            showPopup();
+        });
+}
+
+function showPopup() {
+    document.getElementById('popup').classList.add('open');
+}
+
+function closePopup() {
+    document.getElementById('popup').classList.remove('open');
+}

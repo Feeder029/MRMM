@@ -399,35 +399,54 @@
            <div class="contact-form">
                 <div>
                     <label class="form-label">Name</label>
-                    <input type="text" class="form-input" placeholder="Your name">
+                    <input type="text" id="nameData" class="form-input" placeholder="Your name" required>
                 </div>
                 <div>
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-input" placeholder="your@email.com">
+                    <input type="email" id="emailData" class="form-input" placeholder="your@email.com" required>
                 </div>
                 <div>
                     <label class="form-label">Message</label>
-                    <textarea class="form-textarea" placeholder="Tell me about your project…"></textarea>
+                    <textarea id="messageData" class="form-textarea" placeholder="Tell me about your project…" required></textarea>
                 </div>
-                <button class="btn-send" onclick="document.getElementById('popup').classList.add('open')">Send message</button>
+                <!-- <button class="btn-send" onclick="document.getElementById('popup').classList.add('open')">Send message</button> -->
+                 <button class="btn-send" onclick="sendEmail()">Send message</button>
+                 
            </div>
         </div>
         
     </section>
-        <!-- Temporary -->
         <div class="popup-overlay" id="popup">
+            <div class="popup-card">
+                <button class="popup-close" onclick="closePopup()">[ close ]</button>
+                <div class="popup-rule"></div>
+                <div class="popup-label" id="popupLabel">Message sent</div>
+                <div class="popup-title" id="popupTitle">Got it.</div>
+                <div class="popup-body" id="popupBody">Thanks for reaching out — I'll get back to you soon.</div>
+            </div>
+        </div>
+        <!-- Temporary -->
+        <!-- <div class="popup-overlay" id="popup">
             <div class="popup-card">
                 <img class="loading-gif" src="./img/cat-ouch.gif" alt="Loading..." />
                 <p>Under Construction.</p>
                 <button onclick="document.getElementById('popup').classList.remove('open')">Dismiss</button>
             </div>
-        </div>
+        </div> -->
     <footer>
         <p>&copy; 2026 Mark Reven Macaspac</p>
        
     </footer>
 
     <script src="./scripts/main.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"> </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "C34mwPihlidcCbblu",
+            });
+        })();
+    </script>
 </body>
 </html>
